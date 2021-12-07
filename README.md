@@ -103,7 +103,7 @@ The `utils/fetchApi.js` file does the following:
 
 Within the `index.js` file do the following:
 - Import `baseUrl` and `fetchApi` from `utils/fetchApi`
-- Export `getStaticProps` async function that contains the API calls and returns a props object. API calls can be made using the parameters from the API documentation.    
+- Export the `getStaticProps` async function that contains the API calls and returns a props object. API calls can be made using the parameters from the API documentation.    
 
 Also, make sure to create the Property component to display the necessary props. 
 
