@@ -25,6 +25,7 @@ Once the Next.js app was made the `.babelrc` file was manually created to includ
     "plugins": []
 }
 ``` 
+[Babel](https://babeljs.io/docs/en/) is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers. 
 
 To run the application enter the following command into the terminal:
 ```
@@ -46,13 +47,13 @@ The command directly above will install the Chakra UI and Axios.
 - React Horizontal Scrolling Menu... creates horizontal scrolling menus... in React.
 - React Icons are a collection of popular icons to use within a React project. 
 
-
+---
 ### 2. Editing the Project
 To start editing the Next.js project the `pages/index.js` file should be modified. The live page will auto-update as the file `index.js` file is editied.
 When creating a new project everything within the `<div>` can be deleted as well as any unnecessary imports.
 
 COMPONENTS
-Reusable components can be created in React and Next.js to split the UI into more manageable pieces.
+Reusable components can be created in React and Next.js to split the UI into more manageable pieces. Components are typically contained in a `components` folder.
 Components are JavaScript functions that accept input (in the form of "props") and return elements that describe what should appear on screen.
 
 To learn more about components see the following:
@@ -73,16 +74,18 @@ The Next.js Image component from `next/image` is simply an extension of the HTML
 To learn more about the Next.js image component see the following:
 - [Next.js Image Component/Image Optimization](https://nextjs.org/docs/basic-features/image-optimization)
 
-
+---
 ### 3. Styling with Chakra UI
 The Chakra UI is a component library. By importing the necessary components one can create easily styled projects.
 For example, the Flex, Box, Text, and Button components are common components. They render elements such as `<div>` and `<button>`.
 From there the components can be given shorthand props such as color, alignItems, justifyContent, etc.  
 
+For Chakra UI to work properly, the ChakraProvider needs to be set up at the root of the application. 
+
 To learn more about the Chakra UI see the documentation:
 - [Chakra UI Website](https://chakra-ui.com/)
 
-
+---
 ### 4. API Routes - Working with Data
 This project utilizes [RapidAPI](https://rapidapi.com/hub) as its API Source. 
 Specifically, using the API [Bayut](https://rapidapi.com/apidojo/api/bayut/) which is an API to query real estate in the UAE.
@@ -115,6 +118,6 @@ To learn more about working with data in Next.js see the following:
 - [Asynchronous JavaScript](https://www.better.dev/asynchronous-javascript-using-async-await)
 - [Next.js Data Fetching](https://nextjs.org/docs/basic-features/data-fetching)
 
-
+---
 ### 5. Deployment
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

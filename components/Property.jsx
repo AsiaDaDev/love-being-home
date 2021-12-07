@@ -8,6 +8,8 @@ import millify from 'millify';
 
 import DefaultImage from '../assets/images/default-house.jpg';
 
+// Property - This component creates the property cards that appear on the Home page
+
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalId } }) => (
     <Link href={`/property/${externalId}`} passHref>
         <Flex flexWrap="wrap" w="420px" p="5" paddingTop="0" justifyContent="flex-start" cursor="pointer">
