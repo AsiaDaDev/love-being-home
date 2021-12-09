@@ -17,10 +17,10 @@ const Search = ({ properties }) => {
         <Box>
             <Flex
                 p="2"
+                mt="2"
                 justifyContent="center"
                 alignItems="center"
                 cursor="pointer"
-                bg="gray.100"
                 borderColor="gray.200"
                 borderBottom="1px"
                 fontWeight="black"
@@ -53,7 +53,7 @@ const Search = ({ properties }) => {
 
 export default Search;
 
-export async function getStaticProps({ query }) {
+export async function getServerSideProps({ query }) {
     const purpose = query.purpose || 'for-rent';
     const rentFrequency = query.rentFrequency || 'yearly';
     const minPrice = query.minPrice || '0';
@@ -65,11 +65,11 @@ export async function getStaticProps({ query }) {
     const locationExternalIDs = query.locationExternalIDs || '5002';
     const categoryExternalID = query.categoryExternalID || '4';
 
-    const data = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&minPrice=${minPrice}&maxPrice=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`);
+    const data = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`);
   
     return {
       props: {
-        properties: data?.hits,
+        properties: data?.hits
       }
     }
   }

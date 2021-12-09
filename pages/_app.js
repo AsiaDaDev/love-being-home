@@ -7,13 +7,17 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import Layout from '../components/Layout';
 
+import Fonts from '../components/Fonts';
+import customTheme from '../styles/theme';
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
 
       </Head>
-      <ChakraProvider>
+      <ChakraProvider theme={customTheme}>
+        <Fonts />
         <Layout>
           <Component {...pageProps} />
         </Layout>

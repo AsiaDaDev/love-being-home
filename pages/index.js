@@ -5,7 +5,20 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import Property from '../components/Property';
 import {baseUrl, fetchApi } from '../utils/fetchApi';
 
-// Banner Component - Appears on the Home Page 
+import buildings from '../assets/illustrations/buildings.svg';
+
+// Landing Page Component - Appears above the fold on the Home Page
+const Landing = () => (
+  <Box>
+    <Flex pt="12">
+      <Image src={buildings} alt="building-decor"/>
+      <Text>Renting? Buying? Look no further!</Text>
+      <Text>Find the ideal apartment, home, or office space quick and easy. We make sure people love where they're staying!</Text>
+    </Flex>
+  </Box>
+)
+
+// Banner Component - Appears below the fold on the Home Page 
 const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, buttonText }) => (
   <Flex 
   flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
@@ -25,6 +38,8 @@ const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, but
 export default function Home({ propertiesForSale, propertiesForRent }) {
   return (
     <Box>
+      <Landing/>
+
       <Banner 
         purpose={'RENT A HOME'} 
         title1="Rental Homes for"

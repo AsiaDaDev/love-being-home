@@ -10,10 +10,10 @@ const Layout = ({ children }) => (
         <Head>
             <title>Love Being Home Real Estate</title>
         </Head>
+        <header>
+            <Navbar />
+        </header>
         <Box maxWidth="1280px" m="auto">
-            <header>
-                <Navbar />
-            </header>
             <main>
                 {children}
             </main>
