@@ -23,7 +23,7 @@ npx create-next-app@latest  ./
 This command initializes a new Next.js application inside of the current container folder. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 Note, Node.js will need to be installed on the system for the command to work properly. 
-
+  
   
 **BABEL**  
 Once the Next.js app was made the `.babelrc` file was manually created to include the `"presets"` and `"plugins"`:
@@ -59,6 +59,7 @@ The command directly above will install the Chakra UI, Emotion, Axios, Millify, 
 - NProgress is a npm package that creates slim progress bars.
 - React Horizontal Scrolling Menu... creates horizontal scrolling menus... in React.
 - React Icons are a collection of popular icons to use within a React project. 
+
 
 ---
 ### 2. Edit the Project :hammer_and_wrench:

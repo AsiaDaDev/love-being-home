@@ -8,7 +8,7 @@ import {baseUrl, fetchApi } from '../utils/fetchApi';
 import buildings from '../assets/illustrations/buildings.svg';
 
 // Landing Page Component - Appears above the fold on the Home Page
-const Landing = ({ head1, head2, landdesc, rentButton, buyButton, comProp }) => (
+const Landing = ({ head1, head2, landdesc, rentlink, rentbutton, buylink, buybutton, searchlink, comprop }) => (
   <Box>
     <Flex mt="20" justifyContent="center">
       <Image src={buildings} alt="building-decor"/>
@@ -20,14 +20,14 @@ const Landing = ({ head1, head2, landdesc, rentButton, buyButton, comProp }) => 
     </Flex>
     <Flex bg="gray.600" height="180" alignItems="center" justifyContent="space-evenly">
       <Flex flexWrap="wrap" alignItems="center" justifyContent="center">
-        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          {rentButton}
+        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          <Link href={rentlink}>{rentbutton}</Link>
         </Button>
-        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          {buyButton}
+        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          <Link href={buylink}>{buybutton}</Link>
         </Button>
-        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          {comProp}
+        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          <Link href={searchlink}>{comprop}</Link>
         </Button>
       </Flex>
     </Flex>
@@ -58,9 +58,12 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         head1="Renting? Buying?"
         head2="Look no further!"
         landdesc="Find the ideal apartment, home, or office space quick and easy. We make sure people love where they're staying!"
-        rentButton="Rent a Property"
-        buyButton="Buy a Property"
-        comProp="Commercial Properties"
+        rentlink="/search?purpose=for-rent"
+        rentbutton="Rent a Property"
+        buylink="/search?purpose=for-sale"
+        buybutton="Buy a Property"
+        searchlink="/search"
+        comprop="Commercial Properties"
       />
 
       <Banner 

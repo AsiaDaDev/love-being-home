@@ -1,25 +1,62 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, MenuButton, MenuList, MenuItem, IconButton, Flex, Box, Spacer } from  '@chakra-ui/react';
+import { Menu, MenuButton, MenuList, MenuItem, IconButton, Button, Flex, Box, Spacer } from  '@chakra-ui/react';
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
 import { BsSearch } from 'react-icons/bs';
 import { FiKey } from 'react-icons/fi';
 
 import lovebeinghomerealestatelogo from '../assets/illustrations/love-being-home-real-estate-logo.svg';
 
+// Logo - Displays the SVG Logo
+const Logo = () => (
+    <Box cursor="pointer" marginLeft="4">
+        <Link href="/">
+            <Image alt="Love Being Home Real Estate logo" src={lovebeinghomerealestatelogo}/>
+        </Link>
+    </Box>
+)
+
+const DesktopNavLink = ({ linkName, navText }) => (
+    <Button
+        as="a" 
+        aria-label="Home" 
+        mr="16" 
+        variant="link">
+            <Link href={linkName}>{navText}</Link>
+    </Button>
+)
+
 // NavBar - This component creates the navigation bar
 
 export default function Navbar() {
     return (
         <Flex w="100%" p="2" paddingTop="4" shadow="dropShadow" justifyContent='center'>
+            {/*This Flexbox is responsible for containing the Logo and Nav links in the middle.*/}
             <Flex w="1280px" justifyContent="space-between" alignItems='center'>
-                <Box cursor="pointer" marginLeft="4">
-                    <Link href="/">
-                        <Image alt="Love Being Home Real Estate logo" src={lovebeinghomerealestatelogo}/>
-                    </Link>
-                </Box>
+                <Logo />
                 <Spacer />
-                <Box>
+                {/*This Flexbox contains the desktop nav links that only appear for larger screens*/}
+                <Flex display={['none', 'none', 'none', 'flex']}>
+                    <DesktopNavLink 
+                        linkName="/"
+                        navText="Home"
+                    />
+                    <DesktopNavLink 
+                        linkName="/search"
+                        navText="Search"
+                    />
+                    <DesktopNavLink 
+                        linkName="/search?purpose=for-rent"
+                        navText="Rent Property"
+                    />
+                    <DesktopNavLink 
+                        linkName="/search?purpose=for-sale"
+                        navText="Buy Property"
+                    />
+                </Flex>
+                {/*This Flexbox contains the mobile icon nav smaller screens*/}
+                <Flex display={['flex', 'flex', 'flex', 'none']}>
                     <Menu>
                         <MenuButton color="red.700" marginRight="8" as={IconButton} icon={< FcMenu/>} variant="outlined" />
                         <MenuList>
@@ -37,7 +74,7 @@ export default function Navbar() {
                             </Link>
                         </MenuList>
                     </Menu>
-                </Box>
+                </Flex>
             </Flex>
         </Flex>
     )
