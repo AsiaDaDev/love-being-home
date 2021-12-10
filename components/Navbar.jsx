@@ -20,8 +20,9 @@ const Logo = () => (
 const DesktopNavLink = ({ linkName, navText }) => (
     <Button
         as="a" 
+        w="100%"
+        mr="8"
         aria-label="Home" 
-        mr="16" 
         variant="link">
             <Link href={linkName}>{navText}</Link>
     </Button>
@@ -33,11 +34,11 @@ export default function Navbar() {
     return (
         <Flex w="100%" p="2" paddingTop="4" shadow="dropShadow" justifyContent='center'>
             {/*This Flexbox is responsible for containing the Logo and Nav links in the middle.*/}
-            <Flex w="1280px" justifyContent="space-between" alignItems='center'>
+            <Flex w="1280px" justifyContent="space-between" alignItems='center' justifyContent="space-between">
                 <Logo />
                 <Spacer />
                 {/*This Flexbox contains the desktop nav links that only appear for larger screens*/}
-                <Flex display={['none', 'none', 'none', 'flex']}>
+                <Flex w="50%" display={['none', 'none', 'none', 'flex']} alignItems="center">
                     <DesktopNavLink 
                         linkName="/"
                         navText="Home"
