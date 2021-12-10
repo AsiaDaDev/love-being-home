@@ -6,7 +6,7 @@ This README will not offer a step-by-step written guide to creating everything i
 Instead this README will act as a reference guide for developers who are famliar with the concepts featured in this project but may need additional assistance understanding those concepts to be able to use them independently. 
 
 ## Making the Project 
-This project was made using the JavaScript framework, Next.js. The goal of this project was to create a real estate web application that would showcase JavaScript skills by making use of JavaScript frameworks and libraries. As well as the ability to retrieve and display API data effectively within a web app. This project was made to be housed on the [love-being-home](https://github.com/asiabthetechie/love-being-home) repository on Github.   
+This project was made using the JavaScript framework, Next.js. The goal of this project was to create a real estate web application that would showcase both design and JavaScript skills by making use of various frameworks and libraries. As well as the ability to retrieve and display API data effectively within a web app. This project was made to be housed on the [love-being-home](https://github.com/asiabthetechie/love-being-home) repository on Github.   
 
 Construction of this project was made possible with the use of the following:
 - [Build and Deploy a Modern Real Estate App | React Website Tutorial](https://www.youtube.com/watch?v=y47gYvXchXM&ab_channel=JavaScriptMastery) - A detailed ReactJS and NextJS tutorial offered on YouTube by JavaScript Mastery
@@ -14,7 +14,7 @@ Construction of this project was made possible with the use of the following:
 - [Next.js Deployment Documentation](https://nextjs.org/docs/deployment) - The official Next.js documentation deployment section
 - [Learn Next.js](https://nextjs.org/learn) - A interactive Next.js tutorial offered by the Next.js team 
 
-
+---
 ### 1. Create the Project :construction:
 Start by creating a new folder to contain the project. For this project the folder was named 'Love-Being-Home-Real-Estate-App'. Enter the folder within your terminal and then create the project by running the following command:
 ```
@@ -25,7 +25,7 @@ This command initializes a new Next.js application inside of the current contain
 Note, Node.js will need to be installed on the system for the command to work properly. 
 
   
-**BABEL**
+**BABEL**  
 Once the Next.js app was made the `.babelrc` file was manually created to include the `"presets"` and `"plugins"`:
 ```
 {
@@ -36,7 +36,7 @@ Once the Next.js app was made the `.babelrc` file was manually created to includ
 [Babel](https://babeljs.io/docs/en/) is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers. 
   
   
-**RUN THE PROJECT**
+**RUN THE PROJECT**  
 Once that's done to run the application enter the following command into the terminal:
 ```
 npm run dev
@@ -45,7 +45,7 @@ Then open in [http://localhost:3000](http://localhost:3000).
 To reuse the terminal enter CTRL + C, and when asked if the batch job should be terminated enter Y (for yes).  
   
   
-**INSTALL DEPENDENCIES/PACKAGES**
+**INSTALL DEPENDENCIES/PACKAGES**  
 Now the dependencies/packages will need to be installed to the project.  
 Install the necessary dependencies by running:
 ```

@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 const customTheme = extendTheme({
     fonts: {
-        heading: 'Podkova Bold',
+        headings: 'Podkova Bold',
         body: 'Montserrat Alternates Regular',
     },
     shadows: {

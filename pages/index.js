@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Flex, Box, Text, Button } from '@chakra-ui/react';
+import { Flex, Box, Heading, Text, Button, Divider } from '@chakra-ui/react';
 
 import Property from '../components/Property';
 import {baseUrl, fetchApi } from '../utils/fetchApi';
@@ -8,12 +8,28 @@ import {baseUrl, fetchApi } from '../utils/fetchApi';
 import buildings from '../assets/illustrations/buildings.svg';
 
 // Landing Page Component - Appears above the fold on the Home Page
-const Landing = () => (
+const Landing = ({ head1, head2, landdesc, rentButton, buyButton, comProp }) => (
   <Box>
-    <Flex pt="12">
+    <Flex mt="20" justifyContent="center">
       <Image src={buildings} alt="building-decor"/>
-      <Text>Renting? Buying? Look no further!</Text>
-      <Text>Find the ideal apartment, home, or office space quick and easy. We make sure people love where they're staying!</Text>
+      <Box w="40%" mt="16" mr="4" textAlign="center" alignItems="center">
+        <Heading fontSize="3vw" fontWeight="700">{head1}</Heading>
+        <Heading fontSize="2vw" fontWeight="700" mt="2">{head2}</Heading>
+        <Text fontSize="1.5vw" marginTop="2">{landdesc}</Text>
+      </Box>
+    </Flex>
+    <Flex bg="gray.600" height="180" alignItems="center" justifyContent="space-evenly">
+      <Flex flexWrap="wrap" alignItems="center" justifyContent="center">
+        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          {rentButton}
+        </Button>
+        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          {buyButton}
+        </Button>
+        <Button m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+          {comProp}
+        </Button>
+      </Flex>
     </Flex>
   </Box>
 )
@@ -25,9 +41,9 @@ const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, but
       <Image src={imageUrl} width={500} height={300} alt="banner"/>
       <Box p="5">
         <Text color="gray.500" fontSize="sm" fontWeight="medium">{purpose}</Text>
-        <Text fontSize="3xl" fontWeight="bold">{title1} <br />{title2}</Text>
-        <Text color="gray.700" paddingTop="3" paddingBottom="3" fontSize="lg">{desc1} <br /> {desc2}</Text>
-        <Button fontSize="xl">
+        <Heading fontSize="3vw" fontWeight="bold">{title1} <br />{title2}</Heading>
+        <Text color="gray.700" paddingTop="3" paddingBottom="3" fontSize="2.5vw">{desc1} <br /> {desc2}</Text>
+        <Button fontSize="lg">
           <Link href={linkName}>{buttonText}</Link>
         </Button>
       </Box>
@@ -38,7 +54,14 @@ const Banner = ({ imageUrl, purpose, title1, title2, desc1, desc2, linkName, but
 export default function Home({ propertiesForSale, propertiesForRent }) {
   return (
     <Box>
-      <Landing/>
+      <Landing
+        head1="Renting? Buying?"
+        head2="Look no further!"
+        landdesc="Find the ideal apartment, home, or office space quick and easy. We make sure people love where they're staying!"
+        rentButton="Rent a Property"
+        buyButton="Buy a Property"
+        comProp="Commercial Properties"
+      />
 
       <Banner 
         purpose={'RENT A HOME'} 
@@ -54,6 +77,8 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
       <Flex flexWrap="wrap">
         {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
+
+      <Divider />
 
       <Banner 
         purpose="BUY A HOME"
