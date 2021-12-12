@@ -18,14 +18,16 @@ const Logo = () => (
 )
 
 const DesktopNavLink = ({ linkName, navText }) => (
-    <Button
-        as="a" 
-        w="100%"
-        mr="8"
-        aria-label="Home" 
-        variant="link">
-            <Link href={linkName}>{navText}</Link>
-    </Button>
+    <Link href={linkName} passHref>
+        <Button
+            as="a" 
+            w="100%"
+            mr="8"
+            aria-label="Home" 
+            variant="link">
+            {navText}
+        </Button>
+    </Link>
 )
 
 // NavBar - This component creates the navigation bar

@@ -20,15 +20,21 @@ const Landing = ({ head1, head2, landdesc, rentlink, rentbutton, buylink, buybut
     </Flex>
     <Flex bg="gray.600" height="180" alignItems="center" justifyContent="space-evenly">
       <Flex flexWrap="wrap" alignItems="center" justifyContent="center">
-        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          <Link href={rentlink}>{rentbutton}</Link>
-        </Button>
-        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          <Link href={buylink}>{buybutton}</Link>
-        </Button>
-        <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
-          <Link href={searchlink}>{comprop}</Link>
-        </Button>
+        <Link href={rentlink}>
+          <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+            {rentbutton}
+          </Button>
+        </Link>
+        <Link href={buylink}>
+          <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+            {buybutton}
+          </Button>
+        </Link>
+        <Link href={searchlink}>
+          <Button as="a" m="4" fontSize="lg" size='md' variant="solid" shadow="dark-lg">
+            {comprop}
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   </Box>

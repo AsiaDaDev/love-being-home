@@ -130,6 +130,7 @@ Components make up the user interface but just like components the functionality
 To learn more about adding functionality to a project see the following:
 - [Asynchronous JavaScript](https://www.better.dev/asynchronous-javascript-using-async-await)
 - [Next.js Data Fetching](https://nextjs.org/docs/basic-features/data-fetching)
+- [The .map() Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 **FETCHING DATA**  
 The `utils/fetchApi.js` file is responsible for fetching the external API data for the project. Ihis utility makes use of `getStaticProps`, a static generation function that allows  users to fetch data at build time.  
@@ -143,11 +144,18 @@ Then within the `index.js` file:
 - Export the `getStaticProps` async function that contains the API calls and returns a props object. API calls can be made using the parameters from the API documentation.
 
 **SEARCH FUNCTIONALITY**  
-The Search page is made from a function component that uses makes use of React States and Hooks, components, and utilities. The async function that's exported from the Search page makes use of `getServerSideProps`, a server-side rendering function that fetches data on each request.  
+The Search functionality is made from React States and Hooks, components, and utilities. 
 
-To learn more about how the search functionality is made see the following:
+The `utils/filterData` utility contains raw data used for the Search functionality. The `filterData.js` file is imported into the `SearchFilter` component. 
+
+The `components/SearchFilters` component uses the `useState` hook to create the `filters` variable set to `filterData`. Within the return we display a Flexbox that contains a key and onChange event attribute. 
+
+The `pages/search.js`page contains the `getServerSideProps` async function. It's a server-side rendering function that fetches data on each request. Within the function the query object is passed as an argument representing a query string. A query string is part of a URL that assigns values to specified parameters; it commonly includes fields added to a base URL by a web browser or other client app. Finally, the return `props` passes `properties: data?.hits` to the page's Search component.
+
+To learn more about how `search.js` is made see the following:
 - [React Hooks](https://reactjs.org/docs/hooks-state.html)
 - [Handling Events](https://reactjs.org/docs/handling-events.html)
+- [Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
 
 ### 6. Deploy the Project :rocket:
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
