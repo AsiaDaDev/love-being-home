@@ -5,9 +5,11 @@ import { MdCancel } from 'react-icons/md';
 import Image from 'next/image';
 
 import { filterData, getFilterValues} from '../utils/filterData';
+import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 const SearchFilters = () => {
     const [filters, setFilters] = useState(filterData);
+    const router = useRouter();
 
     const searchProperties = (filterValues) => {
         const path = router.pathname;
